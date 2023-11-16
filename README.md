@@ -1,2 +1,2 @@
 # ELTN-117_Clock
-Example
+Code used in the clock design for ELTN-117.
