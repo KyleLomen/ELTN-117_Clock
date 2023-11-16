@@ -19,6 +19,8 @@ const int minDisplay[] = {8, 9, 10, 11};
 const int loadTens = 13;
 const int loadOnes = 12;
 const int hourDisplay[] = {A0, A1, A2, A3};
+const int HrLdOnes = A4
+const int MinLdTens = A5
 
 // Constants
 const int ticksPerMinute = 3600; // Set to 60 for testing
@@ -206,6 +208,15 @@ void writeBus(const int bus[], int size, byte value) {
 void displayHour(int h, bool pm) {
   writeBus(hourDisplay, 4, h - 1);
   digitalWrite(pmLED, pm);
+}
+//Code for a second 7-Seg Display :) -J
+void SevSegDisHr(int w){
+writeBus(minDisplay, 4, w / 10);
+digitalWrite(MinLdTens, HIGH);
+digitalWrite(MinLdTens, LOW);
+writeBus(minDisplay, 4, w % 10);
+digitalWrite(HrLdOnes, HIGH);
+digitalWrite(HrLdOnes, LOW);
 }
 
 // Displays the minute
