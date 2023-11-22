@@ -184,7 +184,7 @@ void handleTime() {
 }
 
 void handleAlarm() {
-  if(isPM = alarmIsPM && hour == alarmHour && minute == alarmMinute) {
+  if(isPM == alarmIsPM && hour == alarmHour && minute == alarmMinute) {
     playAlarm();
   }
 }
